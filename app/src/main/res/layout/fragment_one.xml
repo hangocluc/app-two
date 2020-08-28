@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:fillViewport="true"
+    tools:context=".fragment.OneFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/line1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:gravity="center"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/image_fragone"
+                    android:layout_width="150dp"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="10dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/crile" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line2"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line1">
+
+                <TextView
+                    android:id="@+id/txt_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Moi nhap ten: *"
+                    android:textColor="#00ACC1" />
+
+                <EditText
+                    android:id="@+id/edt_name_fragone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:layout_marginTop="10dp"
+                    android:hint="Name" />
+                <TextView
+                    android:layout_width="390dp"
+                    android:layout_height="1dp"
+                    android:visibility="visible"
+                    android:background="@android:color/black"
+                    />
+            </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/line3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line2">
+
+                        <TextView
+                            android:id="@+id/txt_namsinh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Moi nhap nam sinh: *"
+                            android:textColor="#00ACC1" />
+
+                        <EditText
+                            android:id="@+id/edt_namsinh_fragone"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@android:color/white"
+                            android:hint="Nam sinh" />
+                        <TextView
+                            android:layout_width="390dp"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:background="@android:color/black"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/line4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line3">
+
+                        <TextView
+                            android:id="@+id/txt_tuoi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Moi nhap tuoi: *"
+                            android:textColor="#00ACC1" />
+
+                        <EditText
+                            android:id="@+id/edt_tuoi_fragone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:editable="false"
+                            android:background="@android:color/white"
+                            android:hint="Tuoi" />
+                        <TextView
+                            android:layout_width="390dp"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:background="@android:color/black"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/line5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line4">
+
+                        <TextView
+                            android:id="@+id/txt_mieuta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Mieu ta: *"
+                            android:textColor="#00ACC1" />
+
+                        <EditText
+
+                            android:id="@+id/edt_mieuta_fragone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@android:color/white"
+                            android:hint="Mieu ta" />
+                        <TextView
+                            android:layout_width="390dp"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:background="@android:color/black"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/line6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line5">
+
+
+                        <Button
+                            android:id="@+id/btn_add"
+                            android:layout_marginTop="50dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/button"
+                            android:text="ADD"
+                            android:textColor="#FAF6F6" />
+
+                    </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
