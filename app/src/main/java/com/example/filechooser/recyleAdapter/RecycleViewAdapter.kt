@@ -5,20 +5,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.filechooser.modle.Animal
 import com.example.filechooser.R
 import com.example.filechooser.interfacer.ListennerInterface
+import com.example.filechooser.modle.Animal
 import kotlinx.android.synthetic.main.row.view.*
-import kotlin.collections.ArrayList
+import kotlin.random.Random
 
 class RecycleViewAdapter : RecyclerView.Adapter<RecycleViewAdapter.use> {
     var list: MutableList<Animal> = ArrayList()
     lateinit var context: Context
-    lateinit var listener:ListennerInterface
-    constructor(context: Context,list:ArrayList<Animal>,listennerInterface: ListennerInterface) {
+    lateinit var listener: ListennerInterface
+
+    var isDelete: Boolean = false
+
+   var status:Boolean = false
+    constructor(context: Context, list: ArrayList<Animal>, listennerInterface: ListennerInterface) {
         this.context = context
-        this.list=list
-        this.listener=listennerInterface
+        this.list = list
+        this.listener = listennerInterface
     }
 
     inner class use(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -27,12 +31,33 @@ class RecycleViewAdapter : RecyclerView.Adapter<RecycleViewAdapter.use> {
 //            itemView.image_row.text = animal.image
             itemView.name_row.text = animal.ten
             itemView.namsinh_row.text = animal.namsinh.toString()
-            itemView.tuoi_row.text=animal.tinhtuoi().toString()
+            itemView.tuoi_row.text = animal.tinhtuoi().toString()
             itemView.image_row.setImageURI(animal.imgae)
             itemView.mieuta_row.text = animal.mieuta
+            itemView.checkbox.isChecked = animal.isCheck
             itemView.setOnClickListener {
-                listener.send(animal)
+                if (isDelete) {
+                    animal.isCheck = !animal.isCheck
+                    notifyItemChanged(position)
+
+                } else {
+                    listener.send(animal)
+                }
+
             }
+
+            if (isDelete) {
+                itemView.checkbox.visibility = View.VISIBLE
+
+            } else {
+                itemView.checkbox.visibility = View.INVISIBLE
+            }
+
+//            itemView.setOnClickListener {
+//
+//            }
+
+
         }
     }
 
@@ -48,4 +73,5 @@ class RecycleViewAdapter : RecyclerView.Adapter<RecycleViewAdapter.use> {
     override fun onBindViewHolder(holder: use, position: Int) {
         holder.onBindData(list.get(position))
     }
+
 }

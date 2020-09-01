@@ -30,19 +30,24 @@
         android:id="@+id/line2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/line1">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Name:"
+            android:textColor="#00ACC1" />
+
+        <TextView
+            android:layout_marginLeft="15dp"
             android:id="@+id/txt_name_fragmentthree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_marginTop="20dp"
-            android:text="Name:" />
-
+     />
 
     </LinearLayout>
 
@@ -50,19 +55,23 @@
         android:id="@+id/line3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/line2">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Năm sinh:"
+            android:textColor="#00ACC1" />
+        <TextView
+            android:layout_marginLeft="15dp"
             android:id="@+id/txt_namsinh_fragmentthree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_marginTop="20dp"
-            android:text="Năm sinh" />
-
+         />
 
     </LinearLayout>
 
@@ -70,17 +79,23 @@
         android:id="@+id/line4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/line3">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Tuổi:"
+            android:textColor="#00ACC1" />
+        <TextView
+           android:layout_marginLeft="15dp"
             android:id="@+id/txt_tuoi_fragmentthree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Tuổi" />
+        />
 
     </LinearLayout>
 
@@ -88,17 +103,23 @@
         android:id="@+id/line5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/line4">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Miêu tả:"
+            android:textColor="#00ACC1" />
+        <TextView
+            android:layout_marginLeft="15dp"
             android:id="@+id/txt_mieuta_fragmentthree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Miêu tả" />
+         />
 
     </LinearLayout>
 

@@ -5,7 +5,6 @@ import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
@@ -16,9 +15,7 @@ import androidx.fragment.app.Fragment
 import com.example.filechooser.MainActivity
 import com.example.filechooser.R
 import com.example.filechooser.interfacer.ListennerInterface
-import com.example.filechooser.modle.Animal
 import com.example.filechooser.modle.Constan
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_one.*
 
 
@@ -55,18 +52,17 @@ class OneFragment : Fragment() {
 //            var debug = 1
 //            debug = 2
 //            debug = 3
-           uriImage?.let {
-            var intent = Intent()
-            intent.putExtra(Constan.KEY_IMAGE, it.toString())
-            intent.putExtra(Constan.KEY_NAME, edt_name_fragone.text.toString())
-            intent.putExtra(Constan.KEY_NAMSINH, edt_namsinh_fragone.text.toString().toInt())
-            intent.putExtra(Constan.KEY_MIEUTA, edt_mieuta_fragone.text.toString())
-            intent.setAction(Constan.ANIMAL)
-            activity?.sendBroadcast(intent)
+            uriImage?.let {
+                var intent = Intent()
+                intent.putExtra(Constan.KEY_IMAGE, it.toString())
+                intent.putExtra(Constan.KEY_NAME, edt_name_fragone.text.toString())
+                intent.putExtra(Constan.KEY_NAMSINH, edt_namsinh_fragone.text.toString().toInt())
+                intent.putExtra(Constan.KEY_MIEUTA, edt_mieuta_fragone.text.toString())
+                intent.setAction(Constan.ANIMAL)
+                activity?.sendBroadcast(intent)
 
             }
-                   (activity as MainActivity).update()
-
+            (activity as MainActivity).update()
 
 
         }
@@ -104,6 +100,7 @@ class OneFragment : Fragment() {
         startActivityForResult(Intent.createChooser(intent, "chooser"), 1)
 
     }
+
     var uriImage: Uri? = null
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -112,7 +109,23 @@ class OneFragment : Fragment() {
             data.data?.let {
                 image_fragone.setImageURI(it)
                 uriImage = it
+//                Glide.with(this)
+//                    .asBitmap()
+//                    .load()
+//                    .into(object : CustomTarget<Bitmap>() {
+//                        override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
+//                            image_fragone.setImageBitmap(resource)
+//                        }
+//
+//                        override fun onLoadCleared(placeholder: Drawable?) {
+//                            // this is called when imageView is cleared on lifecycle call or for
+//                            // some other reason.
+//                            // if you are referencing the bitmap somewhere else too other than this imageView
+//                            // clear it here as you can no longer have the bitmap
+//                        }
+//                    })
             }
+
 //         data.data.let {
 //             fath = it
 //
@@ -133,5 +146,5 @@ class OneFragment : Fragment() {
 //
 //
     }
-
-    }
+  fun call(){}
+}

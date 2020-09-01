@@ -25,6 +25,12 @@ class MainActivity : AppCompatActivity() {
         viewpager.currentItem = 1
     }
 
+    fun backone(){
+        val fragOne: OneFragment = viewpagerAdapter.instantiateItem(viewpager,0) as OneFragment
+        fragOne.call()
+        viewpager.currentItem = 0
+
+    }
     var animal: Animal? = null
     fun updateAnimal(animal: Animal) {
         this.animal = animal
@@ -47,7 +53,14 @@ class MainActivity : AppCompatActivity() {
 
         tablayout.setupWithViewPager(viewpager)
 
-    }
+
+        btn_floatingActionButton.setOnClickListener {
+            backone()
+        }
+
+
+        }
+
 
 }
 
